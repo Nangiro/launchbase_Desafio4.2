@@ -10,7 +10,9 @@ server.use(routes)
 server.set("view engine", "njk")
 
 nunjucks.configure("views",{
-    express: server
+    express: server,
+    autoescape: false, //Para colocar links no meio de frases
+    noCache: true //Pega informacao do servidor e nao da cache
 })
 
 server.listen(5000, function() {
